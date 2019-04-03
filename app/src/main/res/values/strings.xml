@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MYFunJoy</string>
+    <string name="title_home">主页</string>
+    <string name="title_concerned">关注</string>
+    <string name="title_add">发布</string>
+    <string name="title_message">消息</string>
+    <string name="login_alert_message">登录即代表阅读并同意服务条款</string>
+    <string name="title_loginPage">QQ</string>
+    <string name="ed_nameTips">输入账号</string>
+    <string name="ed_tipsContext">输入密码</string>
+    <string name="tv_tips_login">新用户注册</string>
+    <string name="tv_tips_findPassword">忘记密码？</string>
+    <string name="title_register">注册</string>
+    <string name="tips_account">账号</string>
+    <string name="tips_No1psw">请输入密码</string>
+    <string name="tips_No2psw">请再次输入密码</string>
+</resources>
