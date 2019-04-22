@@ -1,0 +1,47 @@
+<resources>
+<<<<<<< HEAD
+    <string name="app_name">douyin</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+=======
+    <string name="app_name">MYFunJoy</string>
+>>>>>>> 204e6777f6b3b7729775baecf2e35dabaffea01c
+    <string name="title_home">主页</string>
+    <string name="title_concerned">关注</string>
+    <string name="title_add">发布</string>
+    <string name="title_message">消息</string>
+    <string name="login_alert_message">登录即代表阅读并同意服务条款</string>
+<<<<<<< HEAD
+    <string name="title_loginPage">你还未登录账号，快登录吧</string>
+=======
+    <string name="title_loginPage">QQ</string>
+>>>>>>> 204e6777f6b3b7729775baecf2e35dabaffea01c
+    <string name="ed_nameTips">输入账号</string>
+    <string name="ed_tipsContext">输入密码</string>
+    <string name="tv_tips_login">新用户注册</string>
+    <string name="tv_tips_findPassword">忘记密码？</string>
+    <string name="title_register">注册</string>
+    <string name="tips_account">账号</string>
+    <string name="tips_No1psw">请输入密码</string>
+    <string name="tips_No2psw">请再次输入密码</string>
+<<<<<<< HEAD
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+
+    <string name="intro_message">
+        <![CDATA[
+
+
+            This sample demonstrates the basic use of Camera2 API. Check the source code to see how
+            you can display camera preview and take pictures.
+
+
+        ]]>
+    </string>
+    <string name="request_permission">This sample needs camera permission.</string>
+
+=======
+>>>>>>> 204e6777f6b3b7729775baecf2e35dabaffea01c
+</resources>
