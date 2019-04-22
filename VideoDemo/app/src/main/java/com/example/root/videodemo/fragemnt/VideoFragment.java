@@ -1,28 +1,35 @@
 package com.example.root.videodemo.fragemnt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.root.videodemo.MyVideo;
-import com.example.root.videodemo.MyVideoPlayer;
+import com.example.root.videodemo.RecorderVideo.MyVideoPlayer;
 import com.example.root.videodemo.R;
-import com.example.root.videodemo.VideoLab;
+import com.example.root.videodemo.RecorderVideo.CameraActivity;
+import com.example.root.videodemo.activity.SelfActivity;
 
-import java.util.UUID;
-
-import butterknife.BindView;
 import cn.jzvd.JZVideoPlayerStandard;
 
-public class VideoFragment extends Fragment {
+public class VideoFragment extends Fragment{
     private static final String ARG_VIDEO_URL = "video_url";
 
     private TextView mAuthorTextView;
     private TextView mDescriptionTextView;
+
+    //下导航栏
+    private TextView mRecommendTextView; //推荐
+    private TextView mFollowTextView; //关注
+    private ImageView mAddImageView; //拍摄
+    private TextView mMyTextView;   //我的
+    private TextView mMessageTextView; //消息
 
     private MyVideo mMyVideo;
     private MyVideoPlayer mMyVideoPlayer;
@@ -69,6 +76,26 @@ public class VideoFragment extends Fragment {
         mMyVideoPlayer = (MyVideoPlayer)v.findViewById(R.id.video_player);
         mMyVideoPlayer.setUp("https://aweme.snssdk.com/aweme/v1/play/?video_id=374e166692ee4ebfae030ceae117a9d0&line=0&ratio=720p&media_type=4&vr_type=0", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,mMyVideo.getDescription());
 
+
+        //录制视频
+        mAddImageView = (ImageView) v.findViewById(R.id.navigationBar_add);
+        mAddImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getActivity(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //点击“我的”，启动新界面
+        mMyTextView = (TextView)v.findViewById(R.id.navigationBar_mine);
+        mMyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getActivity(), SelfActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
