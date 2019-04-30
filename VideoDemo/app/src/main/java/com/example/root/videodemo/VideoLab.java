@@ -2,6 +2,8 @@ package com.example.root.videodemo;
 
 import android.content.Context;
 
+import com.example.root.videodemo.widget.MyVideo;
+
 import java.util.ArrayList;
 import java.util.List;
 

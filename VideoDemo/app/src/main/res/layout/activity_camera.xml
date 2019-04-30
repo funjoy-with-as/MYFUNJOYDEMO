@@ -3,22 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
     <Button
         android:id="@+id/btn_openCamera2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="打开Camera2" />
+        android:text="打开相机" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_locatVideo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/btn_openCamera2"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:text="开启前请确保已经获取了相关权限：拍照，录音，存储这三个权限"/>
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/btn_openCamera2"
+        android:text="本地文件"/>
+
+</LinearLayout>
+
 </RelativeLayout>

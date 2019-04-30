@@ -12,12 +12,14 @@ import com.example.root.videodemo.R;
 
 public class CameraActivity extends AppCompatActivity {
     private Button btnOpenCamera2;
+    private Button btnLocalVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
+        btnLocalVideo = (Button) findViewById(R.id.btn_locatVideo);
         btnOpenCamera2=(Button) findViewById(R.id.btn_openCamera2);
 
         //配置Camera2相关参数，

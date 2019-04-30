@@ -8,10 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
-import com.example.root.videodemo.MyVideo;
+import com.example.root.videodemo.widget.MyVideo;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.VideoLab;
 import com.example.root.videodemo.fragemnt.VideoFragment;

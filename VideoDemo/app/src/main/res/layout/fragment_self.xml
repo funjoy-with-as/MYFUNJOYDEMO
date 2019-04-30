@@ -8,6 +8,7 @@
     android:background="@drawable/shape_gradient">
 
     <ImageView
+        android:id="@+id/back_image_view"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="4dp"
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.root.videodemo.RoundImageView
+    <com.example.root.videodemo.widget.RoundImageView
         android:id="@+id/head_sculpture_iamge"
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"

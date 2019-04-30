@@ -6,7 +6,7 @@ import com.example.root.videodemo.fragemnt.SelfFragment;
 
 public class SelfActivity extends SingleFragmentActivity {
     @Override
-    protected Fragment createFragment() {
+    protected Fragment createFragment(){
         return new SelfFragment();
     }
 }

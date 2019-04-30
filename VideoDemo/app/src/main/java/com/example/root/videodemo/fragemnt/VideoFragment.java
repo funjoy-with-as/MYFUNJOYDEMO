@@ -10,11 +10,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.root.videodemo.MyVideo;
-import com.example.root.videodemo.RecorderVideo.MyVideoPlayer;
+import com.example.root.videodemo.widget.MyVideo;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.RecorderVideo.CameraActivity;
+import com.example.root.videodemo.RecorderVideo.MyVideoPlayer;
+import com.example.root.videodemo.activity.FollowActivity;
+import com.example.root.videodemo.activity.MessageActivity;
 import com.example.root.videodemo.activity.SelfActivity;
+import com.example.root.videodemo.activity.VideoListActivity;
+
 
 import cn.jzvd.JZVideoPlayerStandard;
 
@@ -25,7 +29,7 @@ public class VideoFragment extends Fragment{
     private TextView mDescriptionTextView;
 
     //下导航栏
-    private TextView mRecommendTextView; //推荐
+    private TextView mHomeTextView; //推荐
     private TextView mFollowTextView; //关注
     private ImageView mAddImageView; //拍摄
     private TextView mMyTextView;   //我的
@@ -66,15 +70,16 @@ public class VideoFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_video, container, false);
 
-        //设置视频作者
-        mAuthorTextView = (TextView)v.findViewById(R.id.author_text_view);
-        mAuthorTextView.setText(mMyVideo.getAuthor());
-        //设置视频描述
-        mDescriptionTextView = (TextView)v.findViewById(R.id.description_text_view);
-        mDescriptionTextView.setText(mMyVideo.getDescription());
+//        //设置视频作者
+//        mAuthorTextView = (TextView)v.findViewById(R.id.author_text_view);
+//        mAuthorTextView.setText(mMyVideo.getAuthor());
+//        //设置视频描述
+//        mDescriptionTextView = (TextView)v.findViewById(R.id.description_text_view);
+//        mDescriptionTextView.setText(mMyVideo.getDescription());
 
         mMyVideoPlayer = (MyVideoPlayer)v.findViewById(R.id.video_player);
         mMyVideoPlayer.setUp("https://aweme.snssdk.com/aweme/v1/play/?video_id=374e166692ee4ebfae030ceae117a9d0&line=0&ratio=720p&media_type=4&vr_type=0", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,mMyVideo.getDescription());
+
 
 
         //录制视频
@@ -83,6 +88,16 @@ public class VideoFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(getActivity(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //点击“消息”，启动新界面
+        mMessageTextView = (TextView)v.findViewById(R.id.navigationBar_messages);
+        mMessageTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), MessageActivity.class);
                 startActivity(intent);
             }
         });
@@ -96,6 +111,29 @@ public class VideoFragment extends Fragment{
                 startActivity(intent);
             }
         });
+        /home/zhangzhe/Desktop/MYFUNJOYDEMO-develope/VideoDemo
+
+        //点击“主页”，启动新界面
+        mHomeTextView = (TextView)v.findViewById(R.id.navigationBar_home);
+        mHomeTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getActivity(), VideoListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //点击“关注”，启动新界面
+        mFollowTextView = (TextView)v.findViewById(R.id.navigationBar_concerned);
+        mFollowTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getActivity(), FollowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         return v;
     }

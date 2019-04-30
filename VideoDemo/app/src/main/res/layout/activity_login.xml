@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginAndEnroll.LoginActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
+
+            <ImageView
+                android:id="@+id/symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/title_loginPage"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_user_name"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:hint="@string/ed_nameTips"
+            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/ed_tipsContext"
+                android:inputType="textPassword"
+                android:textSize="20sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_isShowPsw"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"/>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="#1E90FF"
+            android:text="登录"
+            android:textSize="24sp" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/tv_tips_login"
+                android:textColor="@color/loginBlue" />
+
+            <TextView
+                android:id="@+id/tv_find_psw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/tv_tips_findPassword"
+                android:textColor="@color/loginBlue" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/login_alert_message" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
