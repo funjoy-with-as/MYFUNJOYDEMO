@@ -1,5 +1,6 @@
 package com.example.root.videodemo.fragemnt;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.root.videodemo.R;
+import com.example.root.videodemo.activity.MainActivity;
 import com.example.root.videodemo.activity.VideoPagerActivity;
 
 public class SelfFragment extends android.support.v4.app.Fragment {
@@ -23,8 +25,9 @@ public class SelfFragment extends android.support.v4.app.Fragment {
         mBackImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
+                Intent intent  = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

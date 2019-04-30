@@ -38,7 +38,7 @@ public class VideoPagerActivity extends AppCompatActivity {
 
         String videoUrl = (String)getIntent().getStringExtra(EXTRA_VIDEO_URL);
 
-        mVideoViewPager = (ViewPager)findViewById(R.id.video_view_pager);
+        mVideoViewPager = (ViewPager)findViewById(R.id.video_view_pager1);
 
         //从MyVideoLab中获取数据集
         mMyVideos = VideoLab.get(this).getMyVideos();

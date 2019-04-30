@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.root.videodemo.R;
+import com.example.root.videodemo.activity.MainActivity;
 import com.example.root.videodemo.activity.VideoPagerActivity;
 
 public class FellowFragment extends Fragment {
@@ -24,8 +25,9 @@ public class FellowFragment extends Fragment {
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
+                Intent intent  = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

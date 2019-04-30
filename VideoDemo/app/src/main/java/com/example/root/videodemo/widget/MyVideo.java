@@ -4,6 +4,11 @@ public class MyVideo{
     //都是只读成员变量
     private String mAuthor;
     private String mDescription;
+
+    public void setUrl(String url) {
+        mUrl = url;
+    }
+
     private String mUrl;
     public MyVideo(){
         mAuthor ="root";

@@ -13,4 +13,9 @@ public class MyVideoPlayer extends JZVideoPlayerStandard{
     public MyVideoPlayer(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
+    @Override
+    public void init(Context context){
+        super.init(context);
+    }
 }
