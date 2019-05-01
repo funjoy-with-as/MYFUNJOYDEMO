@@ -4,12 +4,8 @@ public class MyVideo{
     //都是只读成员变量
     private String mAuthor;
     private String mDescription;
-
-    public void setUrl(String url) {
-        mUrl = url;
-    }
-
     private String mUrl;
+
     public MyVideo(){
         mAuthor ="root";
         mDescription="";
@@ -28,6 +24,8 @@ public class MyVideo{
     public String getUrl() {
         return mUrl;
     }
+
+    public void setUrl(String url) { mUrl = url; }
 
     public void setDescription(String mDescription) {
         this.mDescription = mDescription;

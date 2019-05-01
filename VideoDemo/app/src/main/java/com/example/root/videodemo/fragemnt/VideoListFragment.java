@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.root.videodemo.widget.MyVideo;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.VideoLab;
 import com.example.root.videodemo.activity.VideoPagerActivity;
+import com.example.root.videodemo.widget.MyVideo;
 
 import java.util.List;
 
@@ -59,7 +59,7 @@ public class VideoListFragment extends Fragment {
     }
 
     //RecyclerView自身并不会创建视图，由ViewHolder创建
-    //在VideoHolder中处理点击事件
+    //在VideoHolder中aaa处理点击事件
     private class VideoHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mAuthorTextView;
         private TextView mDescriptionTextView;

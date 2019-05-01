@@ -1,6 +1,5 @@
 package com.example.root.videodemo.fragemnt;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,6 +25,7 @@ public class SelfFragment extends android.support.v4.app.Fragment {
             public void onClick(View view) {
                 Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

@@ -8,24 +8,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-            <com.example.root.videodemo.RecorderVideo.MyVideoPlayer
-                android:id="@+id/video_player"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_weight="8">
-
-            </com.example.root.videodemo.RecorderVideo.MyVideoPlayer>
-
-
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <com.example.root.videodemo.RecorderVideo.MyVideoPlayer
+            android:id="@+id/video_player"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="8">
+        </com.example.root.videodemo.RecorderVideo.MyVideoPlayer>
 
         <LinearLayout
-            android:id="@+id/bottom"
+            android:id="@+id/navigationBar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="#d6c6d0"
+            android:background="#e0000000"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -35,20 +33,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="主页"
-                android:textColor="#f2f2f2"
+                android:text="推荐"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/navigationBar_follow"
+                android:id="@+id/navigationBar_concerned"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="关注"
                 android:textColor="#f2f2f2"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -66,7 +64,7 @@
                 android:gravity="center"
                 android:text="消息"
                 android:textColor="#f2f2f2"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -77,7 +75,7 @@
                 android:gravity="center"
                 android:text="我的"
                 android:textColor="#f2f2f2"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

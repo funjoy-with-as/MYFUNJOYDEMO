@@ -12,15 +12,14 @@ import android.widget.TextView;
 
 import com.example.root.videodemo.VideoLab;
 import com.example.root.videodemo.widget.MyVideo;
-import com.example.root.videodemo.RecorderVideo.MyVideoPlayer;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.RecorderVideo.CameraActivity;
+import com.example.root.videodemo.RecorderVideo.MyVideoPlayer;
 import com.example.root.videodemo.activity.FollowActivity;
 import com.example.root.videodemo.activity.MessageActivity;
 import com.example.root.videodemo.activity.SelfActivity;
 import com.example.root.videodemo.activity.VideoListActivity;
 
-import java.util.List;
 
 import cn.jzvd.JZVideoPlayerStandard;
 
@@ -39,7 +38,6 @@ public class VideoFragment extends Fragment{
 
     private MyVideo mMyVideo;
     private MyVideoPlayer mMyVideoPlayer;
-
 
 //    @BindView(R.id.author_text_view) TextView mAuthorTextView;
 //    @BindView(R.id.description_text_view) TextView mDescriptionTextView;
@@ -65,9 +63,9 @@ public class VideoFragment extends Fragment{
 
         //从argument中获取MyVideo url
         String videoUrl = (String) getArguments().getString(ARG_VIDEO_URL);
+        mMyVideo = new MyVideo();
         mMyVideo = VideoLab.get(getActivity()).getMyVideo(videoUrl);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -81,8 +79,10 @@ public class VideoFragment extends Fragment{
 //        mDescriptionTextView.setText(mMyVideo.getDescription());
 
         mMyVideoPlayer = (MyVideoPlayer)v.findViewById(R.id.video_player);
-     //mMyVideoPlayer.setUp("https://aweme.snssdk.com/aweme/v1/play/?video_id=374e166692ee4ebfae030ceae117a9d0&line=0&ratio=720p&media_type=4&vr_type=0", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,mMyVideo.getDescription());
-        mMyVideoPlayer.setUp(mMyVideo.getUrl(), JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,mMyVideo.getDescription());
+        mMyVideoPlayer.setUp(mMyVideo.getUrl(), JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"");
+//        mMyVideoPlayer.startButton.performClick();
+//        mMyVideoPlayer.startVideo(); //自动播放
+
 
 
         //录制视频
@@ -115,6 +115,7 @@ public class VideoFragment extends Fragment{
             }
         });
 
+
         //点击“主页”，启动新界面
         mHomeTextView = (TextView)v.findViewById(R.id.navigationBar_home);
         mHomeTextView.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +127,7 @@ public class VideoFragment extends Fragment{
         });
 
         //点击“关注”，启动新界面
-        mFollowTextView = (TextView)v.findViewById(R.id.navigationBar_follow);
+        mFollowTextView = (TextView)v.findViewById(R.id.navigationBar_concerned);
         mFollowTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

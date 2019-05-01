@@ -12,7 +12,7 @@ import com.example.root.videodemo.R;
 import com.example.root.videodemo.activity.VideoPagerActivity;
 
 public class MessageFragment extends Fragment {
-    ImageView mBackImageViewButton;
+   ImageView mBackImageViewButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -20,12 +20,13 @@ public class MessageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_message, container, false);
 
         //点击“<”，切换界面
-        mBackImageViewButton = (ImageView)view.findViewById(R.id.back_image_button);
+        mBackImageViewButton = (ImageView)view.findViewById(R.id.back_image_view);
         mBackImageViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

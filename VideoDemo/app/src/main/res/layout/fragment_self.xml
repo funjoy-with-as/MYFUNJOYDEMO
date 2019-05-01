@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/shape_gradient">
-
     <ImageView
         android:id="@+id/back_image_view"
         android:layout_width="32dp"
@@ -34,7 +33,7 @@
         android:layout_width="84dp"
         android:layout_height="41dp"
         android:layout_marginEnd="16dp"
-        android:background="#9c8787"
+        android:background="@color/button_color"
         android:text="编辑"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="@+id/head_sculpture_iamge"

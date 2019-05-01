@@ -20,12 +20,13 @@ public class FellowFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fellow, container, false);
 
         //点击“<”，切换界面
-        mBackButton = (ImageView)view.findViewById(R.id.back_button);
+        mBackButton = (ImageView)view.findViewById(R.id.back_image_view);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

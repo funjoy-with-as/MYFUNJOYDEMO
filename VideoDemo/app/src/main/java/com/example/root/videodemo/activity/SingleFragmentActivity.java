@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.root.videodemo.R;
 
-
 public abstract class SingleFragmentActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
 
