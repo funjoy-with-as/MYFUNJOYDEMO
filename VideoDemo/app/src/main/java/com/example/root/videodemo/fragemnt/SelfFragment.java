@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.root.videodemo.R;
-import com.example.root.videodemo.activity.MainActivity;
 import com.example.root.videodemo.activity.VideoPagerActivity;
 
 public class SelfFragment extends android.support.v4.app.Fragment {
@@ -25,9 +24,8 @@ public class SelfFragment extends android.support.v4.app.Fragment {
         mBackImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(getActivity(), MainActivity.class);
+                Intent intent  = new Intent(getActivity(), VideoPagerActivity.class);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
 

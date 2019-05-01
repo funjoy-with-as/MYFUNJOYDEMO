@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.root.videodemo.activity.MainActivity;
 import com.example.root.videodemo.widget.MyVideo;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.VideoLab;
@@ -90,12 +89,8 @@ public class VideoListFragment extends Fragment {
             //Intent intent = new Intent(getActivity(), VideoActivity.class);
 
             //配置启动VideoPagerActivity
-           // Intent intent = Activity.newIntent(getActivity(), mMyVideo.getUrl());
-
-            //配置启动MainActivity
-            Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = VideoPagerActivity.newIntent(getActivity(), mMyVideo.getUrl());
             startActivity(intent);
-            getActivity().finish();
         }
     }
 
