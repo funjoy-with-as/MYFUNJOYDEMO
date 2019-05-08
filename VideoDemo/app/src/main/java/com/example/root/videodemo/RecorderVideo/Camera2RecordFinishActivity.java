@@ -89,6 +89,7 @@ public class Camera2RecordFinishActivity extends AppCompatActivity implements Vi
             case R.id.ibtn_cancel:{
                 Intent intent = new Intent(Camera2RecordFinishActivity.this,CameraActivity.class);
                 startActivity(intent);
+                finish();
             }
             case R.id.ibtn_sureSelect:{
                 AlertDialog dialog = new AlertDialog.Builder(this)

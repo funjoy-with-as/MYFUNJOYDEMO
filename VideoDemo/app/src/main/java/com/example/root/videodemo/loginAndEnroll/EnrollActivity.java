@@ -90,9 +90,11 @@ public class EnrollActivity extends AppCompatActivity {
                                                     //增加成功
                                                     Toast.makeText(EnrollActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                                                     finish();
-                                                }else{
+                                                }else if(e.getErrorCode() == 202){
                                                     //增加失败
-                                                    Toast.makeText(EnrollActivity.this,"注册失败", Toast.LENGTH_SHORT).show();;
+                                                    Toast.makeText(EnrollActivity.this,"用户名已经被使用", Toast.LENGTH_SHORT).show();;
+                                                }else{
+                                                    Toast.makeText(EnrollActivity.this,e.toString(), Toast.LENGTH_SHORT).show();;
                                                 }
                                             }
                                         });

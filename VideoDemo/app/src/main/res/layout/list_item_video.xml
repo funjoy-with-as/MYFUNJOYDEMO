@@ -6,14 +6,16 @@
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
-        android:id="@+id/author_text_view"
+    <!--<com.example.root.videodemo.JZVideoPlayerStandard-->
+        <!--android:id="@+id/video_player"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_weight="8">-->
+    <!--</com.example.root.videodemo.JZVideoPlayerStandard>-->
+
+
+    <cn.jzvd.JZVideoPlayerStandard
+        android:id="@+id/video_player"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="作者"/>
-    <TextView
-        android:id="@+id/description_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="作品描述"/>
+        android:layout_height="640dp"/>
 </LinearLayout>

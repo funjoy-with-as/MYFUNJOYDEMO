@@ -1,22 +1,18 @@
 package com.example.root.videodemo.RecorderVideo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.cktim.camera2library.Camera2Config;
 import com.cktim.camera2library.camera.Camera2RecordActivity;
 import com.example.root.videodemo.R;
-import com.example.root.videodemo.activity.VideoPagerActivity;
 
 public class CameraActivity extends AppCompatActivity {
     private Button btnOpenCamera2;
     private Button btnLocalVideo;
-    ImageView mBackImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +21,6 @@ public class CameraActivity extends AppCompatActivity {
 
         btnLocalVideo = (Button) findViewById(R.id.btn_locatVideo);
         btnOpenCamera2=(Button) findViewById(R.id.btn_openCamera2);
-        mBackImageView = (ImageView)findViewById(R.id.back_image_view);
 
         //配置Camera2相关参数，
         Camera2Config.RECORD_MAX_TIME = 10;//录制总时间长度
@@ -43,15 +38,6 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Camera2RecordActivity.start(CameraActivity.this);
-                finish();
-            }
-        });
-        mBackImageView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void  onClick(View view){
-                Intent intent  = new Intent(CameraActivity.this, VideoPagerActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
     }

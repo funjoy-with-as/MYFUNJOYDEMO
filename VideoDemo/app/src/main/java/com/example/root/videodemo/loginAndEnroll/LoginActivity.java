@@ -18,7 +18,6 @@ import android.widget.ToggleButton;
 
 
 import com.example.root.videodemo.R;
-import com.example.root.videodemo.activity.VideoPagerActivity;
 import com.example.root.videodemo.fragemnt.VideoFragment;
 
 import cn.bmob.v3.Bmob;
@@ -82,6 +81,8 @@ public class LoginActivity extends AppCompatActivity implements
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_login:{
+                userName = et_user_name.getText().toString();
+                psw = etPsw.getText().toString();
                 final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
 
                 progressDialog.setTitle("正在登录");
@@ -90,8 +91,8 @@ public class LoginActivity extends AppCompatActivity implements
 
 
                 final User user = new User();
-                user.setUsername(et_user_name.getText().toString());
-                user.setPassword(etPsw.getText().toString());
+                user.setUsername(userName);
+                user.setPassword(psw);
                 user.login(new SaveListener<User>() {
                     public void done(User object, BmobException e) {
                         if(e==null){
@@ -103,8 +104,8 @@ public class LoginActivity extends AppCompatActivity implements
                                 edit.putString("USERNAMEE",userName);
                                 edit.putString("USERPASSWORD",psw);
                                 edit.commit();
-                            Intent intent  = new Intent(LoginActivity.this, VideoPagerActivity.class);
-                            startActivity(intent);
+//                            Intent intent  = new Intent(LoginActivity.this, VideoPagerActivity.class);
+//                            startActivity(intent);
                             finish();
                         }else if(e != null){
                             Toast.makeText(LoginActivity.this,"用户名或密码错误", Toast.LENGTH_SHORT).show();
