@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
+import com.example.root.videodemo.MainActivity;
 import com.example.root.videodemo.R;
 import com.example.root.videodemo.fragemnt.VideoFragment;
 
@@ -35,6 +38,8 @@ public class LoginActivity extends AppCompatActivity implements
     private ToggleButton tb_isShowpsw;
     public Boolean isLogined;//是否登录
 
+    public ConstraintLayout mConstraintLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +51,21 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
 
-    private void init() {//初始化各个控件
+    private void init() {
+//        //设置layout透明度
+//        mConstraintLayout = (ConstraintLayout)findViewById(R.id.backgroundLayout);
+//        mConstraintLayout.getBackground().mutate().setAlpha(150);
+
+        //初始化各个控件
         btnLogin = (Button) findViewById(R.id.btn_login);
         et_user_name = (EditText) findViewById(R.id.et_user_name);
         etPsw = (EditText) findViewById(R.id.et_password);
-        tv_find_psw = (TextView) findViewById(R.id.tv_find_psw);
+//        tv_find_psw = (TextView) findViewById(R.id.tv_find_psw);
         tv_register = (TextView) findViewById(R.id.tv_register);
         tb_isShowpsw = (ToggleButton) findViewById(R.id.tb_isShowPsw);
 
         btnLogin.setOnClickListener(this);
-        tv_find_psw.setOnClickListener(this);
+//        tv_find_psw.setOnClickListener(this);
         tv_register.setOnClickListener(this);
 
         tb_isShowpsw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -68,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements
             }
         });
         SharedPreferences sharedPreferences = getSharedPreferences("INFOR", Context.MODE_PRIVATE);
-        et_user_name.setText(sharedPreferences.getString("USERNAMEE",""));
+        et_user_name.setText(sharedPreferences.getString("USERNAME",""));
         etPsw.setText(sharedPreferences.getString("USERPASSWORD",""));
 
     }
@@ -101,11 +111,14 @@ public class LoginActivity extends AppCompatActivity implements
                                 //存入数据
                                 SharedPreferences sharedPreferences = getSharedPreferences("INFOR", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                                edit.putString("USERNAMEE",userName);
+                                edit.putString("USERNAME",userName);
                                 edit.putString("USERPASSWORD",psw);
+                                edit.putString("OBJECTID", user.getObjectId());
                                 edit.commit();
-//                            Intent intent  = new Intent(LoginActivity.this, VideoPagerActivity.class);
-//                            startActivity(intent);
+
+
+                            Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
                             finish();
                         }else if(e != null){
                             Toast.makeText(LoginActivity.this,"用户名或密码错误", Toast.LENGTH_SHORT).show();
@@ -120,9 +133,9 @@ public class LoginActivity extends AppCompatActivity implements
                 startActivityForResult(intent,1);
                 break;
             }
-            case R.id.tv_find_psw:{
-                break;
-            }
+//            case R.id.tv_find_psw:{
+//                break;
+//            }
         }
 
     }

@@ -1,19 +1,14 @@
-package com.example.root.videodemo.widget;
+package com.example.root.videodemo.VideoAdapter;
 
-public class MyVideo {
+public class MyVideo{
     //都是只读成员变量
     private String mAuthor;
     private String mDescription;
-
-    public void setUrl(String url) {
-        mUrl = url;
-    }
-
     private String mUrl;
-    public MyVideo(){
+    public MyVideo(String url){
         mAuthor ="";
         mDescription="";
-        mUrl = "";
+        this.mUrl = url;
     }
 
 

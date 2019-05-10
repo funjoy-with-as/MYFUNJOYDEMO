@@ -38,7 +38,7 @@
             android:layout_below="@+id/iv_takePhoto"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="单击拍照，长按录像"
+            android:text="长按录像"
             android:textColor="@color/white"
             android:textSize="12sp" />
 

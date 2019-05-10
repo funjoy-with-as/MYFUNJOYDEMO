@@ -122,10 +122,6 @@ public class Camera2RecordActivity extends AppCompatActivity implements TextureV
     private int currentTime;
     private MediaRecorder mMediaRecorder;
 
-    public static void start(Context context) {
-        Intent intent = new Intent(context, Camera2RecordActivity.class);
-        context.startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

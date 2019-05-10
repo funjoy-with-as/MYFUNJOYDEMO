@@ -1,4 +1,4 @@
-package com.example.root.videodemo.activity;
+package com.example.root.videodemo;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -7,14 +7,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.root.videodemo.R;
 import com.example.root.videodemo.RecorderVideo.CameraActivity;
-import com.example.root.videodemo.fragemnt.FellowFragment;
-import com.example.root.videodemo.fragemnt.MessageFragment;
 import com.example.root.videodemo.fragemnt.SelfFragment;
 import com.example.root.videodemo.fragemnt.VideoFragment;
 
@@ -31,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void initComponent(){
-        setFragment(new VideoFragment());
         tvHome = (TextView) findViewById(R.id.navigationBar_home);
         tvConcerned = (TextView) findViewById(R.id.navigationBar_concerned);
         ivAdd = (ImageView) findViewById(R.id.navigationBar_add);
@@ -42,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ivAdd.setOnClickListener(this);
         tvMessagee.setOnClickListener(this);
         tvMine.setOnClickListener(this);
+        setFragment(new VideoFragment());
     }
 
     @Override
@@ -50,15 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.navigationBar_home:
                 setFragment(new VideoFragment());
                 return;
-            case R.id.navigationBar_concerned:
-                setFragment(new FellowFragment());
-                return;
             case R.id.navigationBar_add:
                 Intent intent  = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(intent);
-                return;
-            case R.id.navigationBar_messages:
-                setFragment(new MessageFragment());
                 return;
             case R.id.navigationBar_mine:
                 setFragment(new SelfFragment());

@@ -12,4 +12,6 @@
     <color name="loginBlue">#18E</color>
     <color name="colorWhite">#FFF</color>
     <color name="control_background">#cc4285f4</color>
+    <color name="button_color">#535050</color>
+    <color name="ba_color">#939291</color>
 </resources>

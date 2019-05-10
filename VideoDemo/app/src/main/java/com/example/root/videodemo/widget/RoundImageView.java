@@ -1,9 +1,5 @@
 package com.example.root.videodemo.widget;
 
-/**
- * https://www.jianshu.com/p/6b5eef0f6f3d
- */
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

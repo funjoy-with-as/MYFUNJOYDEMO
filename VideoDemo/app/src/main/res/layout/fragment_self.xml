@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shape_gradient">
+    android:background="@drawable/star">
 
     <com.example.root.videodemo.widget.RoundImageView
         android:id="@+id/head_sculpture_iamge"
@@ -23,20 +23,34 @@
         android:id="@+id/edit_button"
         android:layout_width="84dp"
         android:layout_height="41dp"
-        android:layout_marginEnd="16dp"
-        android:background="#287d93"
+        android:layout_marginEnd="24dp"
+        android:background="@color/button_color"
         android:text="编辑"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/head_sculpture_iamge"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="84dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/button_color"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_button" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="efhek"
+        android:text="未登录"
+        android:textColor="@color/white"
+
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/head_sculpture_iamge"
         app:layout_constraintTop_toBottomOf="@+id/head_sculpture_iamge" />
@@ -47,9 +61,10 @@
         android:layout_height="18dp"
         android:layout_marginTop="16dp"
         android:text="快来关注我吧！"
+        android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
 
 </android.support.constraint.ConstraintLayout>

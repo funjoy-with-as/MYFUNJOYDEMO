@@ -38,19 +38,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".loginAndEnroll.EnrollActivity"></activity>
-        <activity
-            android:name=".activity.MainActivity">
+        <activity android:name=".loginAndEnroll.EnrollActivity"/>
+        <activity android:name=".loginAndEnroll.LoginActivity">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-
+        <activity
+            android:name=".MainActivity">
+        </activity>
         <activity android:name=".RecorderVideo.Camera2RecordFinishActivity" />
         <activity android:name=".RecorderVideo.CameraActivity" />
+        <activity android:name=".RecorderVideo.UploadActivity"/>
+        <activity android:name=".EditActivity"/>
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
